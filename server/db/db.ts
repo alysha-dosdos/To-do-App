@@ -4,7 +4,7 @@ import { Task } from '../../models/tasks'
 const db = connection
 
 export async function getAllTasks(): Promise<Task[]> {
-  const tasks = await db('tasks').select('*')
+  const tasks = await db('tasks').select()
   return tasks
 }
 
