@@ -17,26 +17,19 @@ export async function getTaskById(id: number): Promise<Task> {
 }
 
 //add function
-export async function addNewTask(task: Task): Promise<Task> {
-  const { id, name, details, completed } = task
-  const newTask = {
-    id,
-    name,
-    details,
-    completed,
-  }
-  return await db('events').insert(newTask)
+export async function addNewTask(newTask: Task): Promise<Task> {
+  return await db('tasks').insert(newTask)
 }
 
 //update function
 export async function updateTask(updatedTask: Task): Promise<void> {
   const { id, name, details } = updatedTask
-  return await db('locations').where({ id }).update({ name, details })
+  return await db('tasks').where({ id }).update({ name, details })
 }
 
 //update if task completed
 export async function updateTaskAsCompleted(id: number): Promise<void> {
-  return await db('locations').where({ id }).update('completed', true)
+  return await db('tasks').where({ id }).update('completed', true)
 }
 
 //delete function
