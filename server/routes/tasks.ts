@@ -48,6 +48,16 @@ router.delete('/:id', async (req, res) => {
   }
 })
 
-//PATCH 'api/v1/tasks/completed/:id'
+//PATCH 'api/v1/tasks/completed/:id' to set task as completed
+router.patch('/completed/:id', async (req, res) => {
+  const id = Number(req.params.id)
+  try {
+    await db.updateTaskAsCompleted(id)
+    res.sendStatus(200)
+  } catch (error) {
+    console.error(error)
+    res.sendStatus(500)
+  }
+})
 
 export default router
