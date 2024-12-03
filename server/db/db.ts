@@ -30,10 +30,13 @@ export async function addNewTask(task: Task): Promise<Task> {
 
 //update function
 export async function updateTask(updatedTask: Task): Promise<void> {
-  const { id, name, details, completed } = updatedTask
-  return await db('locations')
-    .where({ id })
-    .update({ name, details, completed })
+  const { id, name, details } = updatedTask
+  return await db('locations').where({ id }).update({ name, details })
+}
+
+//update if task completed
+export async function updateTaskAsCompleted(id: number): Promise<void> {
+  return await db('locations').where({ id }).update('completed', true)
 }
 
 //delete function
