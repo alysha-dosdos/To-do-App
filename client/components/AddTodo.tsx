@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { useState, FormEvent, ChangeEvent } from 'react'
+import { useState } from 'react'
 import { postTask } from '../apis/apiTasks'
 import { TaskData } from '../../models/tasks'
 
@@ -25,6 +25,7 @@ function AddTodo() {
   return (
     <>
       <form onSubmit={handleSubmit} className="form">
+        <label htmlFor="name">Event name</label>
         <input
           className="new-todo"
           placeholder="Event name"
