@@ -20,6 +20,7 @@ function AddTodo() {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
     addMutation.mutate({ name: newTask, details: '', completed: false })
+    setNewTask('')
   }
 
   return (
@@ -34,7 +35,7 @@ function AddTodo() {
           id="name"
           name="name"
           onChange={handleChange}
-          // value={newTask}
+          value={newTask}
         />
       </form>
     </>
