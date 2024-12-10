@@ -21,9 +21,11 @@ function DeleteTodo(taskID: Prop) {
   return (
     <>
       <div>
-        <button className="destroy" onClick={handleDelete}>
-          Button
-        </button>
+        <button
+          className="destroy"
+          onClick={handleDelete}
+          aria-label="delete"
+        />
       </div>
     </>
   )

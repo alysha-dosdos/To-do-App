@@ -25,10 +25,10 @@ function AddTodo() {
   return (
     <>
       <form onSubmit={handleSubmit} className="form">
-        <label htmlFor="name">Event name</label>
+        <label htmlFor="name">Put to-do below</label>
         <input
           className="new-todo"
-          placeholder="Event name"
+          placeholder="What to do next?"
           // autoFocus={true}
           type="text"
           id="name"
